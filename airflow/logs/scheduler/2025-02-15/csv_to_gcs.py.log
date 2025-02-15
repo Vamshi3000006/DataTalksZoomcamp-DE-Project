@@ -1,0 +1,57 @@
+[2025-02-15T17:17:11.152+0000] {processor.py:186} INFO - Started process (PID=28) to work on /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:17:11.153+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/csv_to_gcs.py for tasks to queue
+[2025-02-15T17:17:11.158+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:17:11.158+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:17:11.177+0000] {processor.py:925} INFO - DAG(s) 'zip_csv_ingestion' retrieved from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:17:11.642+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:17:11.641+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-15T17:17:12.431+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:17:12.430+0000] {dag.py:4180} INFO - Setting next_dagrun for zip_csv_ingestion to 2025-02-15 00:00:00+00:00, run_after=2025-02-16 00:00:00+00:00
+[2025-02-15T17:17:12.612+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/csv_to_gcs.py took 1.507 seconds
+[2025-02-15T17:17:45.208+0000] {processor.py:186} INFO - Started process (PID=86) to work on /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:17:45.209+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/csv_to_gcs.py for tasks to queue
+[2025-02-15T17:17:45.211+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:17:45.211+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:17:45.228+0000] {processor.py:925} INFO - DAG(s) 'zip_csv_ingestion' retrieved from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:17:45.256+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:17:45.256+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-15T17:17:45.293+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:17:45.293+0000] {dag.py:4180} INFO - Setting next_dagrun for zip_csv_ingestion to 2025-02-15 00:00:00+00:00, run_after=2025-02-16 00:00:00+00:00
+[2025-02-15T17:17:45.861+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/csv_to_gcs.py took 0.662 seconds
+[2025-02-15T17:19:17.437+0000] {processor.py:186} INFO - Started process (PID=136) to work on /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:19:17.463+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/csv_to_gcs.py for tasks to queue
+[2025-02-15T17:19:17.465+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:19:17.465+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:19:17.523+0000] {processor.py:925} INFO - DAG(s) 'zip_csv_ingestion' retrieved from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:19:17.586+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:19:17.586+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-15T17:19:17.705+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:19:17.704+0000] {dag.py:4180} INFO - Setting next_dagrun for zip_csv_ingestion to 2025-02-15 00:00:00+00:00, run_after=2025-02-16 00:00:00+00:00
+[2025-02-15T17:19:17.797+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/csv_to_gcs.py took 0.379 seconds
+[2025-02-15T17:19:49.679+0000] {processor.py:186} INFO - Started process (PID=188) to work on /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:19:49.686+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/csv_to_gcs.py for tasks to queue
+[2025-02-15T17:19:49.694+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:19:49.694+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:19:49.716+0000] {processor.py:925} INFO - DAG(s) 'zip_csv_ingestion' retrieved from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:19:49.822+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:19:49.821+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-15T17:19:49.954+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:19:49.954+0000] {dag.py:4180} INFO - Setting next_dagrun for zip_csv_ingestion to 2025-02-15 00:00:00+00:00, run_after=2025-02-16 00:00:00+00:00
+[2025-02-15T17:19:50.004+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/csv_to_gcs.py took 0.355 seconds
+[2025-02-15T17:20:21.080+0000] {processor.py:186} INFO - Started process (PID=246) to work on /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:20:21.082+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/csv_to_gcs.py for tasks to queue
+[2025-02-15T17:20:21.086+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:20:21.085+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:20:21.101+0000] {processor.py:925} INFO - DAG(s) 'zip_csv_ingestion' retrieved from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:20:21.136+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:20:21.136+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-15T17:20:21.663+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:20:21.663+0000] {dag.py:4180} INFO - Setting next_dagrun for zip_csv_ingestion to 2025-02-15 00:00:00+00:00, run_after=2025-02-16 00:00:00+00:00
+[2025-02-15T17:20:21.699+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/csv_to_gcs.py took 0.626 seconds
+[2025-02-15T17:20:51.950+0000] {processor.py:186} INFO - Started process (PID=304) to work on /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:20:51.958+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/csv_to_gcs.py for tasks to queue
+[2025-02-15T17:20:51.970+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:20:51.970+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:20:52.005+0000] {processor.py:925} INFO - DAG(s) 'zip_csv_ingestion' retrieved from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:20:52.059+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:20:52.059+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-15T17:20:52.212+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:20:52.212+0000] {dag.py:4180} INFO - Setting next_dagrun for zip_csv_ingestion to 2025-02-15 00:00:00+00:00, run_after=2025-02-16 00:00:00+00:00
+[2025-02-15T17:20:52.857+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/csv_to_gcs.py took 0.918 seconds
+[2025-02-15T17:21:25.109+0000] {processor.py:186} INFO - Started process (PID=359) to work on /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:21:25.110+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/csv_to_gcs.py for tasks to queue
+[2025-02-15T17:21:25.112+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:21:25.112+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:21:25.123+0000] {processor.py:925} INFO - DAG(s) 'zip_csv_ingestion' retrieved from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:21:25.170+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:21:25.169+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-15T17:21:25.202+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:21:25.202+0000] {dag.py:4180} INFO - Setting next_dagrun for zip_csv_ingestion to 2025-02-15 00:00:00+00:00, run_after=2025-02-16 00:00:00+00:00
+[2025-02-15T17:21:25.507+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/csv_to_gcs.py took 0.406 seconds
+[2025-02-15T17:22:01.099+0000] {processor.py:186} INFO - Started process (PID=415) to work on /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:22:01.106+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/csv_to_gcs.py for tasks to queue
+[2025-02-15T17:22:01.111+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:22:01.110+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:22:01.160+0000] {processor.py:925} INFO - DAG(s) 'zip_csv_ingestion' retrieved from /opt/airflow/dags/csv_to_gcs.py
+[2025-02-15T17:22:01.254+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:22:01.253+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-02-15T17:22:01.380+0000] {logging_mixin.py:190} INFO - [2025-02-15T17:22:01.380+0000] {dag.py:4180} INFO - Setting next_dagrun for zip_csv_ingestion to 2025-02-15 00:00:00+00:00, run_after=2025-02-16 00:00:00+00:00
+[2025-02-15T17:22:01.412+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/csv_to_gcs.py took 0.326 seconds
+[2025-02-15T17:22:32.335+0000] {pr

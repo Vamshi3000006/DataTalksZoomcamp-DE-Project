@@ -1,0 +1,32 @@
+[2025-02-12T23:35:59.123+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-12T23:35:59.162+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: zip_csv_ingestion.download_zip manual__2025-02-12T23:35:50.048760+00:00 [queued]>
+[2025-02-12T23:35:59.193+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: zip_csv_ingestion.download_zip manual__2025-02-12T23:35:50.048760+00:00 [queued]>
+[2025-02-12T23:35:59.196+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-02-12T23:35:59.228+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): download_zip> on 2025-02-12 23:35:50.048760+00:00
+[2025-02-12T23:35:59.254+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=46) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-12T23:35:59.259+0000] {standard_task_runner.py:72} INFO - Started process 48 to run task
+[2025-02-12T23:35:59.258+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'zip_csv_ingestion', 'download_zip', 'manual__2025-02-12T23:35:50.048760+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/csv_to_gcs.py', '--cfg-path', '/tmp/tmppyqtdz6d']
+[2025-02-12T23:35:59.263+0000] {standard_task_runner.py:105} INFO - Job 42: Subtask download_zip
+[2025-02-12T23:35:59.349+0000] {task_command.py:467} INFO - Running <TaskInstance: zip_csv_ingestion.download_zip manual__2025-02-12T23:35:50.048760+00:00 [running]> on host a372cb7e503c
+[2025-02-12T23:35:59.509+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='zip_csv_ingestion' AIRFLOW_CTX_TASK_ID='download_zip' AIRFLOW_CTX_EXECUTION_DATE='2025-02-12T23:35:50.048760+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-12T23:35:50.048760+00:00'
+[2025-02-12T23:35:59.510+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-12T23:35:59.511+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-12T23:35:59.511+0000] {logging_mixin.py:190} INFO - Current task name:download_zip state:running start_date:2025-02-12 23:35:59.162730+00:00
+[2025-02-12T23:35:59.511+0000] {logging_mixin.py:190} INFO - Dag name:zip_csv_ingestion and current dag run status:running
+[2025-02-12T23:35:59.512+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-02-12T23:36:15.362+0000] {job.py:229} INFO - Heartbeat recovered after 10.98 seconds
+[2025-02-12T23:36:23.755+0000] {job.py:229} INFO - Heartbeat recovered after 10.91 seconds
+[2025-02-12T23:36:32.890+0000] {job.py:229} INFO - Heartbeat recovered after 12.44 seconds
+[2025-02-12T23:36:59.180+0000] {logging_mixin.py:190} INFO - Download completed: /tmp/dataset.zip
+[2025-02-12T23:37:00.040+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-02-12T23:37:00.094+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-02-12T23:37:00.095+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=zip_csv_ingestion, task_id=download_zip, run_id=manual__2025-02-12T23:35:50.048760+00:00, execution_date=20250212T233550, start_date=20250212T233559, end_date=20250212T233700
+[2025-02-12T23:37:01.373+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-02-12T23:37:01.373+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-02-12T23:37:01.373+0000] {logging_mixin.py:190} INFO - Dag name:zip_csv_ingestion queued_at:2025-02-12 23:35:50.067847+00:00
+[2025-02-12T23:37:01.374+0000] {logging_mixin.py:190} INFO - Task hostname:a372cb7e503c operator:PythonOperator
+[2025-02-12T23:37:01.403+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-12T23:37:01.462+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-12T23:37:01.463+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

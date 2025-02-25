@@ -1,40 +1,28 @@
-name: dbt CI/CD
+- name: Checkout repository
+  uses: actions/checkout@v3
 
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+- name: Set up Python
+  uses: actions/setup-python@v4
+  with:
+    python-version: '3.9'
 
-jobs:
-  dbt-run:
-    runs-on: ubuntu-latest
+- name: Install dependencies
+  run: |
+    python -m pip install --upgrade pip setuptools wheel
+    pip install dbt-core dbt-bigquery google-cloud-bigquery
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+- name: Install dbt dependencies
+  working-directory: my_dbt_project
+  run: dbt deps
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
+- name: Run dbt models
+  working-directory: my_dbt_project
+  run: dbt run
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip setuptools wheel
-          # Install your dbt packages, adjust as necessary for your adapters
-          pip install dbt-core dbt-bigquery google-cloud-bigquery
+- name: Run dbt tests
+  working-directory: my_dbt_project
+  run: dbt test
 
-      - name: Install dbt dependencies
-        run: dbt deps
-
-      - name: Run dbt models
-        run: dbt run
-
-      - name: Run dbt tests
-        run: dbt test
-
-      - name: Generate dbt docs
-        run: dbt docs generate
+- name: Generate dbt docs
+  working-directory: my_dbt_project
+  run: dbt docs generate

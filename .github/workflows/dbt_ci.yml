@@ -15,6 +15,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: List repository structure
+        run: find . -maxdepth=2 | sort
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -26,13 +29,17 @@ jobs:
           pip install dbt-core dbt-bigquery google-cloud-bigquery
 
       - name: Install dbt dependencies
+        working-directory: my_dbt_project
         run: dbt deps
 
       - name: Run dbt models
+        working-directory: my_dbt_project
         run: dbt run
 
       - name: Run dbt tests
+        working-directory: my_dbt_project
         run: dbt test
 
       - name: Generate dbt docs
+        working-directory: my_dbt_project
         run: dbt docs generate

@@ -18,7 +18,7 @@ jobs:
       - name: List repository structure
         run:  |
           echo "Repository structure:"
-          find . | awk -F/ 'NF<=3' | sort
+          find . | awk -F/ 'NF<=1' | sort
 
 
       - name: Set up Python

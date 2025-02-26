@@ -17,8 +17,9 @@ jobs:
 
       - name: List repository structure
         run:  |
-          echo "Repository structure:" 
-          find . -maxdepth=2 | sort
+          echo "Repository structure:"
+          find . | awk -F/ 'NF<=3' | sort
+
 
       - name: Set up Python
         uses: actions/setup-python@v4

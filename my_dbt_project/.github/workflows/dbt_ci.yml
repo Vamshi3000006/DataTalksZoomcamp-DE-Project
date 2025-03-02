@@ -14,6 +14,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        
+      - name: Test Echo
+        run: echo "Test run"
 
       - name: List repository structure
         run:  |
@@ -34,7 +37,7 @@ jobs:
       - name: Install dbt dependencies
         working-directory: .dbt
         run: dbt deps
-        
+
       - name: Setup dbt profiles directory
         run: |
           mkdir -p ~/.dbt

@@ -32,15 +32,15 @@ jobs:
           pip install dbt-core dbt-bigquery google-cloud-bigquery
 
       - name: Install dbt dependencies
-        working-directory: my_dbt_project
+        working-directory: .dbt
         run: dbt deps
 
       - name: Run dbt models
-        working-directory: my_dbt_project
+        working-directory: .dbt
         run: dbt run
 
       - name: Run dbt tests
-        working-directory: my_dbt_project
+        working-directory: .dbt
         run: dbt test
 
       - name: Generate dbt docs

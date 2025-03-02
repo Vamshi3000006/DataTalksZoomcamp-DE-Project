@@ -34,6 +34,12 @@ jobs:
       - name: Install dbt dependencies
         working-directory: .dbt
         run: dbt deps
+        
+      - name: Setup dbt profiles directory
+        run: |
+          mkdir -p ~/.dbt
+          cp my_dbt_project/profiles.yml ~/.dbt/profiles.yml
+
 
       - name: Run dbt models
         working-directory: .dbt

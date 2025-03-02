@@ -19,10 +19,9 @@ jobs:
         run: echo "Test run"
 
       - name: List repository structure
-        run:  |
+        run: |
           echo "Repository structure:"
           find . | awk -F/ 'NF<=2' | sort
-
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -35,7 +34,7 @@ jobs:
           pip install dbt-core dbt-bigquery google-cloud-bigquery
 
       - name: Install dbt dependencies
-        working-directory: .dbt
+        working-directory: my_dbt_project
         run: dbt deps
 
       - name: Setup dbt profiles directory
@@ -43,13 +42,12 @@ jobs:
           mkdir -p ~/.dbt
           cp my_dbt_project/profiles.yml ~/.dbt/profiles.yml
 
-
       - name: Run dbt models
-        working-directory: .dbt
+        working-directory: my_dbt_project
         run: dbt run
 
       - name: Run dbt tests
-        working-directory: .dbt
+        working-directory: my_dbt_project
         run: dbt test
 
       - name: Generate dbt docs

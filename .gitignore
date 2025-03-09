@@ -1,0 +1,21 @@
+# Python virtual environments
+env/
+myenv/
+
+# Python cache
+__pycache__/
+
+# Sensitive keys (be cautious with credentials)
+airflow/keys/*
+
+# OS and editor files
+.DS_Store
+*.swp
+
+
+# Ignore Terraform keys or large binaries (if not needed)
+terraform/keys/
+
+# Ignore log files
+*.log
+airflow/logs/

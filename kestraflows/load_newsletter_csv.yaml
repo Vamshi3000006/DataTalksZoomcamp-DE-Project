@@ -1,0 +1,106 @@
+id: load_newsletter_csv
+namespace: zoomcamp
+
+variables:
+  # The CSV file is stored in the raw folder of your bucket.
+  file: "raw/dataset.csv"
+  # Construct the full GCS URI using your key‑value bucket name.
+  gcs_file: "gs://{{kv('GCP_BUCKET_NAME')}}/{{vars.file}}"
+  # The managed table where the final data will be stored.
+  table: "{{kv('GCP_DATASET')}}.newsletter"
+
+tasks:
+  - id: create_bq_table
+    type: io.kestra.plugin.gcp.bigquery.Query
+    description: "Create managed newsletter table if it does not exist (with unique_row_id)"
+    sql: |
+      CREATE TABLE IF NOT EXISTS `{{kv('GCP_PROJECT_ID')}}.{{kv('GCP_DATASET')}}.newsletter`
+      (
+          unique_row_id STRING,
+          date TIMESTAMP,
+          year INT64,
+          month INT64,
+          day INT64,
+          author STRING,
+          title STRING,
+          article STRING,
+          url STRING,
+          section STRING,
+          publication STRING
+      )
+      PARTITION BY DATE(date);
+
+  - id: create_bq_external_table
+    type: io.kestra.plugin.gcp.bigquery.Query
+    description: "Create external table for the newsletter CSV file"
+    sql: |
+      CREATE OR REPLACE EXTERNAL TABLE `{{kv('GCP_PROJECT_ID')}}.{{kv('GCP_DATASET')}}.newsletter_ext`
+      (
+          date STRING,
+          year STRING,
+          month STRING,
+          day STRING,
+          author STRING,
+          title STRING,
+          article STRING,
+          url STRING,
+          section STRING,
+          publication STRING
+      )
+      OPTIONS (
+          format = 'CSV',
+          uris = ['{{render(vars.gcs_file)}}'],
+          skip_leading_rows = 1,
+          ignore_unknown_values = TRUE,
+          allow_jagged_rows = TRUE,
+          allow_quoted_newlines = TRUE
+      );
+
+  - id: news_letter_tmp
+    type: io.kestra.plugin.gcp.bigquery.Query
+    description: "Create temporary table with unique row IDs and convert date and numeric columns"
+    sql: |
+      CREATE OR REPLACE TABLE `{{kv('GCP_PROJECT_ID')}}.{{kv('GCP_DATASET')}}.newsletter_tmp` AS
+      SELECT
+        TO_HEX(MD5(CONCAT(
+          COALESCE(CAST(author AS STRING), ""),
+          COALESCE(CAST(title AS STRING), ""),
+          COALESCE(CAST(article AS STRING), ""),
+          COALESCE(CAST(url AS STRING), ""),
+          COALESCE(CAST(publication AS STRING), "")
+        ))) AS unique_row_id,
+        "{{render(vars.file)}}" AS filename,
+        CASE
+          WHEN LENGTH(TRIM(date)) = 10 THEN SAFE.PARSE_TIMESTAMP('%F', CONCAT(TRIM(date), ' 00:00:00'))
+          ELSE SAFE.PARSE_TIMESTAMP('%F %T', TRIM(date))
+        END AS date,
+        SAFE_CAST(year AS INT64) AS year,
+        SAFE_CAST(CAST(month AS FLOAT64) AS INT64) AS month,
+        SAFE_CAST(day AS INT64) AS day,
+        author, title, article, url, section, publication
+      FROM `{{kv('GCP_PROJECT_ID')}}.{{kv('GCP_DATASET')}}.newsletter_ext`;
+
+  - id: bq_yellow_merge
+    type: io.kestra.plugin.gcp.bigquery.Query
+    description: "Merge new data from the temporary table into the managed newsletter table"
+    sql: |
+      MERGE INTO `{{kv('GCP_PROJECT_ID')}}.{{kv('GCP_DATASET')}}.newsletter` T
+      USING `{{kv('GCP_PROJECT_ID')}}.{{kv('GCP_DATASET')}}.newsletter_tmp` S
+      ON T.unique_row_id = S.unique_row_id
+      WHEN NOT MATCHED THEN
+        INSERT (unique_row_id, date, year, month, day, author, title, article, url, section, publication)
+        VALUES (S.unique_row_id, S.date, S.year, S.month, S.day, S.author, S.title, S.article, S.url, S.section, S.publication);
+
+  - id: purge_files
+    type: io.kestra.plugin.core.storage.PurgeCurrentExecutionFiles
+    description: "Purge execution files (optional)"
+    disabled: false
+
+pluginDefaults:
+  - type: io.kestra.plugin.gcp
+    values:
+      serviceAccount: "{{kv('GCP_CREDS')}}"
+      projectId: "{{kv('GCP_PROJECT_ID')}}"
+      location: "{{kv('GCP_LOCATION')}}"
+      bucket: "{{kv('GCP_BUCKET_NAME')}}"
+

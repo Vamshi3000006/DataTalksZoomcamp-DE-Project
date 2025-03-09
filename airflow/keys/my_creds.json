@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "de-project-batch",
+  "private_key_id": "26de12af36a1a6e11f61a778b2634d86b0c9b0cc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC4Dgb+TUbI2xHs\nZdPF/ZOcq2wCN805J5iM/b/1TdIuImKM/Qcm6x1d7fKLLU7lywWq1NjDqfRKxjW7\n+Yc0dd/ykTcIjAC4Dtp23lmOKAmzEVYFaRljYHtpOzJlCUabndBtfyhArt+uIdcu\n9hzS3FFuQvj6034FwV9YLlluZ4NX0EK2oWdnWyfefeCF2bntnyQE+M+4fov5eens\n62Y+kT+puV+cCIUz441Kz8L/SU+xomgomxbSY/OtOMGqbP+y4h7xoBMxxTLLZcmw\nFUYGPvubZOm3XdHeWaUmyR0Ty8j346CDmjoEl3zH9zwFwdrwEa7vae1hKkg4bO5e\nc49JcWTVAgMBAAECggEAHUtmQ42LKabsmGKwrT+qAfKq00OMb39k4XP13JZRULR6\nWRRg0gnz96JKy2oft6VztngANExVrJ0VqmCR64Cjb1k7mCmoZ6M9lFPZjy3CNXUZ\n6uyKdO3DVsFsSPaL/XLF3NezUXBD+9Q5CqlzdwBIGbOhK1MEKOhZQ5DE/TSOjCg8\n96BuV93iahufn0VT1XTrxg+vaY5CVwnwlIm1r4T48OP5PRLOgPFdONh6F2yknS6j\nNj45bXnT7/puQ+8i6cqNuuYaar3BpcQvwTMtAnU90t2gFelT5DA/iI0+5l6pIjYV\ngbYmiV8675qr4VGQw9rzFagpKcQPCy6tbgqnfy84FQKBgQD3JiNKC5YD7CpbKPcf\nYtvdfiz9c81vp4gPyEAcy5URD0rC/Ri9pm7vgjDHzRAoTZYhIW1h9HJvtCBmYsXx\nJCTco8jkiKV/owShqpYl9ulgC/lF1YYXF2SYSXXnQir1foxj1xaVFufFDIDZuJpd\nnb7YaqpA+aKJls1rC6paVRi8TwKBgQC+pXEh8MjwA/JXILvAMfNS0piKgD1GG7MV\nG0MmFAPaOv1MEnSvoUn1OPVMPK9MmeMvIHiLOeWaNooztXgcf9So1JTchYiI4hg6\nhE7YdGSlJ1NrDcNdSHzZZ4cbIFiPt033ix7kblFk9JTzpAXXD+tYSHFD9FkefMR7\nrFBfSzVPmwKBgBYyaKz3yWtkxJEXZsp82H5WHLhOtD647zFrrMZpSmQT2YUVsikm\nT4RXTwZC1paoETm8hNRtXfHGXbqUWG7F7kGavCo6U5LZE0tpxL54JJGpwaOR/88H\nHNPIlTxF5xHRYc59vNt7CSnba58iQ0rxJfjN66iWQxDUaHKaw5wFVIllAoGAeiL/\noaDi+nFs1kjQP8dAfbURqNmTZ9DjIAiBMmnsNelI0W2Zd9M60HGXJSpTnB2SoGSL\nFZcX834xeAMwWgHDOg5G+ChMWnWO1B5jbOTUfcH9/T2qBZ8k7RsYQVatphTnTEnC\nltHeL3FJ4/UXELrQKZTvi3uFhLSmJB02uHY0RzUCgYB4fMk+V7MQHlA5w2xsOTmp\ny95v/8PYrmAzG5vxo5aKW467dm01HEcriDLswzj9ZXaB2vK3bjgR8AB7I2hBk4W2\npQyrOOkoPR3X37XBnzlRd1TOgMEcq6sKflBG7nXCQ9oV1/YeSyU1b1kNWBbM19Qe\noYFNAlGYeDf3eUblr36VmQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "dezoomcampbatchproject-714@de-project-batch.iam.gserviceaccount.com",
+  "client_id": "109782172865782647888",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dezoomcampbatchproject-714%40de-project-batch.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

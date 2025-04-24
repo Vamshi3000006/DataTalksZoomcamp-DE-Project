@@ -26,28 +26,6 @@ This project demonstrates a basic data pipeline setup using Infrastructure as Co
 
 3. **Final Destination**: The data ends up in a specified table in Google BigQuery.
 
----
-
-## 📂 Folder Structure
-```
-project-root/
-│
-├── airflow/
-│   └── dags/
-│       └── csv2gcs.py
-│
-├── kestra/
-│   └── flows/
-│       └── load_newsletter_csv.yaml
-│
-├── terraform/
-│   └── main.tf (plus other .tf files for GCP setup)
-│
-├── docker-compose.yaml (if any)
-└── README.md
-```
-
----
 
 ## 🚀 How to Run This Project Locally
 

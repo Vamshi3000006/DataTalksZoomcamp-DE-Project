@@ -49,10 +49,47 @@ project-root/
 
 ---
 
-## 🚀 How to Run (Coming Soon)
-Instructions for setting up the local environment and running the project will be added soon. This may include:
-- Docker Compose setup for Airflow and Kestra
-- Requirements for Terraform (e.g., GCP credentials)
+## 🚀 How to Run This Project Locally
+
+### 📦 Prerequisites
+- Install [Docker](https://www.docker.com/)
+- Install [Terraform](https://developer.hashicorp.com/terraform/install)
+- A Google Cloud account
+- A GCP service account key JSON file
+
+### 🔧 Setup Steps
+1. **Clone this repository**
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
+
+2. **Set up your GCP credentials**
+Place your GCP service account key JSON file in the project directory and set this environment variable:
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS="your-key-file.json"
+```
+
+3. **Provision infrastructure with Terraform**
+```bash
+cd terraform
+terraform init
+terraform apply
+```
+
+4. **Start Docker containers**
+Make sure your `docker-compose.yaml` includes services for Airflow and Kestra, then:
+```bash
+docker-compose up -d
+```
+
+5. **Run the Airflow DAG** to download the CSV file:
+- Go to `http://localhost:8080` (Airflow UI)
+- Trigger `csv2gcs` DAG manually
+
+6. **Run the Kestra Flow** to load data to BigQuery:
+- Go to `http://localhost:8082` (Kestra UI)
+- Trigger the `load_newsletter_csv` flow
 
 ---
 
